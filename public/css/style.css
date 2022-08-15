@@ -1,7 +1,62 @@
+/* Font Style */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
 /* Reset the browser with reset style */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* Place links above h1 */
+/* Use background color from mock up */
+header{
+    display: block;
+    justify-content: left;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #592720;
+}
+
+body {
     background-color: #3EB489;
+}
+
+/* Use imported font */
+li, a {
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Use imported font */
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    text-decoration: none; 
+}
+
+.links {
+    /* removes bullets from list */
+    list-style: none;
+}
+
+.links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.links a {
+    transition: all 0.25s ease 0s;
+}
+
+.links a:hover {
+    /* When links are hovered, color will change to body background */
+    color: #3EB489;
 }

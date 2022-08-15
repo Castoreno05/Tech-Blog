@@ -4,7 +4,7 @@ const apiRoutes = require('./api');
 router.use('/api', apiRoutes);
 
 // Render the login.handlebars
-router.get((req, res) => {
+router.get("/", (req, res) => {
     res.render('login');
 });
 
