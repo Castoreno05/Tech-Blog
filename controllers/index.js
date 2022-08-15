@@ -3,8 +3,9 @@ const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
 
-router.use((req, res) => {
-    res.send("<h1>This is the wrong route!</h1>")
+// Render the login.handlebars
+router.get((req, res) => {
+    res.render('login');
 });
 
 module.exports = router;
