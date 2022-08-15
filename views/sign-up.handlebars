@@ -1,11 +1,12 @@
 <header>
-
-  <h1>Tech Blog</h1>
+  {{!-- Use the logo to take you back to login --}}
+  <a href="/"><h1>Tech Blog</h1></a>
 
 </header>
 
-<section class="section-one container-xl" id="section-one">
-  <h2>Login</h2>
+{{! Sign up modal needs same attributes as Login modal }}
+<section class="section-two container-xl" id="section-two">
+  <h2>Sign Up</h2>
   <div class="loginModal">
     <form method="POST">
       <p>Username</p>
@@ -13,7 +14,6 @@
         type="text"
         name="username"
         placeholder="Enter username"
-        required
         id="users"
       />
       <p>Password</p>
@@ -24,15 +24,13 @@
         requires
         id="password"
       />
-      
     </form>
   </div>
-  <div id="log">
-    <a href="/home"><input type="submit" name="login" value="Login" id="login"/></a>
-  </div>
+
   <div id="signUp">
-    <p><a href="/sign-up" id="switch">Sign-up?</a></p>
+    <a href="/home"><button>Sign Up</button></a>
   </div>
+  
 </section>
 
 <script src="./js/login.js"></script>

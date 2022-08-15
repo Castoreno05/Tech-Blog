@@ -34,13 +34,19 @@ a {
 
 /* Use imported font */
 h1 {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  left: 5.5%;
+  width: 200px;
+  height: 45px;
   font-family: "Share Tech", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 40px;
-  color: white;
+  color: #251a10;
   text-decoration: none;
+  background-color: #c8f7c8;
+  border-radius: 10%;
+  text-align: center;
+  box-shadow: 5px 5px 0px #a9a9a9;
 }
 
 .links {
@@ -70,7 +76,7 @@ h1 {
   top: 40px;
   height: 45vh;
   width: 50vw;
-  border: solid 1px #251a10;
+  border: solid 3px #251a10;
 }
 
 h2 {
@@ -94,8 +100,8 @@ h2 {
   width: 100%;
   margin-top: 15px;
   font-family: "Share Tech", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 25px;
   color: #251a10;
 }
 
@@ -115,6 +121,8 @@ form input {
 }
 
 #login {
+  display: flex;
+  justify-content: center;
   position: relative;
   top: 45px;
   background-color: #a9a9a9;
@@ -124,6 +132,13 @@ form input {
   font-weight: 400;
   border-radius: 7px;
   height: 35px;
+  width: 150px;
+}
+
+#log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #signUp {
@@ -138,6 +153,14 @@ form input {
   color: #251a10;
 }
 
+#signUp button {
+  position: relative;
+  bottom: 25px;
+  border-radius: 8px;
+  width: 150px;
+  background-color: #a9a9a9;
+}
+
 /* Create the section where the sign up form lives */
 .section-two {
   display: flex;
@@ -147,5 +170,5 @@ form input {
   top: 40px;
   height: 45vh;
   width: 50vw;
-  border: solid 1px #251a10;
+  border: solid 3px #251a10;
 }
