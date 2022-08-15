@@ -1,62 +1,151 @@
 /* Font Style */
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
 
 /* Reset the browser with reset style */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Place links above h1 */
 /* Use background color from mock up */
-header{
-    display: block;
-    justify-content: left;
-    align-items: center;
-    padding: 30px 10%;
-    background-color: #592720;
+header {
+  display: block;
+  justify-content: left;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: #251a10;
 }
 
 body {
-    background-color: #3EB489;
+  background-color: #c8f7c8;
 }
 
 /* Use imported font */
-li, a {
-    font-family: "Share Tech", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
+li,
+a {
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
 }
 
 /* Use imported font */
 h1 {
-    display: flex;
-    justify-content: center;
-    font-family: "Share Tech", sans-serif;
-    font-weight: 400;
-    font-size: 40px;
-    color: white;
-    text-decoration: none; 
+  display: flex;
+  justify-content: center;
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
 }
 
 .links {
-    /* removes bullets from list */
-    list-style: none;
+  /* removes bullets from list */
+  list-style: none;
 }
 
 .links li {
-    display: inline-block;
-    padding: 0 20px;
+  display: inline-block;
+  padding: 0 20px;
 }
 
 .links a {
-    transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
 }
 
 .links a:hover {
-    /* When links are hovered, color will change to body background */
-    color: #3EB489;
+  /* When links are hovered, color will change to body background */
+  color: #c8f7c8;
+}
+/* Create the section where the login form lives */
+.section-one {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  top: 40px;
+  height: 45vh;
+  width: 50vw;
+  border: solid 1px #251a10;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  background-color: #251a10;
+  color: whitesmoke;
+  height: 70px;
+}
+
+.loginModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginModal p {
+  width: 100%;
+  margin-top: 15px;
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #251a10;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 45vw;
+}
+
+form input {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#login {
+  position: relative;
+  top: 45px;
+  background-color: #a9a9a9;
+  color: whitesmoke;
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 7px;
+  height: 35px;
+}
+
+#signUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 75px;
+}
+
+#signUp a {
+  color: #251a10;
+}
+
+/* Create the section where the sign up form lives */
+.section-two {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  top: 40px;
+  height: 45vh;
+  width: 50vw;
+  border: solid 1px #251a10;
 }
