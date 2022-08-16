@@ -188,6 +188,10 @@ form input {
   border: solid 5px #251a10;
 }
 
+#content {
+  height: 45px;
+}
+
 #create {
   display: flex;
   justify-content: center;
