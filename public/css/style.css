@@ -76,7 +76,7 @@ h1 {
   top: 40px;
   height: 45vh;
   width: 50vw;
-  border: solid 3px #251a10;
+  border: solid 5px #251a10;
 }
 
 h2 {
@@ -126,7 +126,22 @@ form input {
   position: relative;
   top: 45px;
   background-color: #a9a9a9;
-  color: whitesmoke;
+  color: #251a10;
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 7px;
+  height: 35px;
+  width: 150px;
+}
+
+#create {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 45px;
+  background-color: #a9a9a9;
+  color: #251a10;
   font-family: "Share Tech", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -170,5 +185,33 @@ form input {
   top: 40px;
   height: 45vh;
   width: 50vw;
-  border: solid 3px #251a10;
+  border: solid 5px #251a10;
+}
+
+.section-three {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  top: 40px;
+  height: 45vh;
+  width: 50vw;
+  border: solid 5px #251a10;
+}
+
+footer {
+  position: relative;
+  top: 60px;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-dark {
+  height: 55px;
+  width: 150px;
+  background-color: #251a10;
 }

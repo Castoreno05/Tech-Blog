@@ -11,3 +11,34 @@
   <h1>Dashboard</h1>
 
 </header>
+
+<section
+  class="section-three container-xl"
+  style="display:none;"
+  id="section-three"
+>
+
+  <h2>Create New Post</h2>
+  <div class="loginModal">
+    <form method="POST">
+      <p>Title</p>
+      <input type="text" name="title" id="title"/>
+      <p>Content</p>
+      <input type="text" name="content" id="content"/>
+    </form>
+  </div>
+  <div id="log">
+    <a><input type="submit" name="create" value="Create" id="create" /></a>
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="button" class="btn btn-dark" id="newPost">+ New Post</button>
+  </div>
+
+</footer>
+
+<script src="./js/dashboard.js"></script>
