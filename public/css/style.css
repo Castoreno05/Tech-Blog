@@ -67,6 +67,8 @@ h1 {
   /* When links are hovered, color will change to body background */
   color: #c8f7c8;
 }
+
+/* Beginning to the login styles */
 /* Create the section where the login form lives */
 .section-one {
   display: flex;
@@ -135,25 +137,23 @@ form input {
   width: 150px;
 }
 
-#create {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 45px;
-  background-color: #a9a9a9;
-  color: #251a10;
-  font-family: "Share Tech", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  border-radius: 7px;
-  height: 35px;
-  width: 150px;
-}
-
 #log {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Beginning to sign-up styles*/
+/* Create the section where the sign up form lives */
+.section-two {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  top: 40px;
+  height: 45vh;
+  width: 50vw;
+  border: solid 5px #251a10;
 }
 
 #signUp {
@@ -176,8 +176,8 @@ form input {
   background-color: #a9a9a9;
 }
 
-/* Create the section where the sign up form lives */
-.section-two {
+/* Beginning to dashboard styles */
+.section-three {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -188,15 +188,19 @@ form input {
   border: solid 5px #251a10;
 }
 
-.section-three {
+#create {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   position: relative;
-  padding: 0;
-  top: 40px;
-  height: 45vh;
-  width: 50vw;
-  border: solid 5px #251a10;
+  top: 45px;
+  background-color: #a9a9a9;
+  color: #251a10;
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 7px;
+  height: 35px;
+  width: 150px;
 }
 
 footer {

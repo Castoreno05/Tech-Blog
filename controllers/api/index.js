@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const dashboard = require('./user')
+// Route to postRoutes
+const postRoutes = require('./postRoutes')
 
-router.use('/dashboard', dashboard);
+router.use('/posts', postRoutes);
 
 module.exports = router;
