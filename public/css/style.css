@@ -100,7 +100,6 @@ h2 {
 
 .loginModal p {
   width: 100%;
-  margin-top: 15px;
   font-family: "Share Tech", sans-serif;
   font-weight: 700;
   font-size: 25px;
@@ -122,11 +121,12 @@ form input {
   width: 100%;
 }
 
-#login {
+#log {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
-  top: 45px;
+  align-items: center;
+  margin: auto;
   background-color: #a9a9a9;
   color: #251a10;
   font-family: "Share Tech", sans-serif;
@@ -134,13 +134,17 @@ form input {
   font-weight: 400;
   border-radius: 7px;
   height: 35px;
-  width: 150px;
+  width: 25vw;
 }
 
-#log {
+#switch{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
+  color: #251a10;
+  font-size: 25px;
+  font-weight: 400;
 }
 
 /* Beginning to sign-up styles*/
@@ -207,7 +211,7 @@ form input {
   width: 150px;
 }
 
-.createdBtns {
+#createdBtns {
   position: relative;
   top: 30px;
   display: flex;
@@ -249,4 +253,10 @@ footer div {
   height: 55px;
   width: 150px;
   background-color: #251a10;
+}
+
+#createDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

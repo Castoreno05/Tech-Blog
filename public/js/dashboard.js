@@ -7,9 +7,9 @@ var body = document.body.children[1];
 // console.log(body);
 
 // Need to click the links to call content
-var btns = document.querySelectorAll(".btnLinks");
-var btnsArr = Array.from(btns);
-console.log(btnsArr);
+var btns = document.getElementsByClassName('postBtn');
+// var btnsArr = Array.from(btns);
+console.log(btns);
 
 createdPost();
 function createdPost() {
@@ -46,7 +46,8 @@ function createdPost() {
 // Remove child (section) when create has been clicked
 // Post results from title and content inputs
 // Reset input values
-create.addEventListener("click", () => {
+create.addEventListener("click", (event) => {
+  event.preventDefault();
   var sectionThree = document.getElementById("section-three");
   var newTitle = document.getElementById("title");
   var newContent = document.getElementById("content");
@@ -67,17 +68,18 @@ create.addEventListener("click", () => {
     },
     body: JSON.stringify(newPost),
   };
-  fetch(postApi, options);
-  // console.log(newPost);
+  fetch(postApi, options).then((response) => {
+    // console.log(newPost);
 
-  // Remove the text values
-  if (newTitle.value && newContent.value != "");
-  newTitle.value = "";
-  newContent.value = "";
-  // Remove the display
-  sectionThree.setAttribute("style", "display:none;");
+    // Remove the text values
+    if (newTitle.value && newContent.value != "");
+    newTitle.value = "";
+    newContent.value = "";
+    // Remove the display
+    sectionThree.setAttribute("style", "display:none;");
 
-  location.reload();
+    location.reload();
+  });
 });
 
 // When a new post is selected. Show newPost form.

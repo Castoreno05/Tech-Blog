@@ -8,35 +8,28 @@
   <h2>Login</h2>
   <div class="loginModal">
     <form method="POST">
-      <p>Username</p>
+      <p>Email</p>
       <input
         type="text"
-        name="username"
-        placeholder="Enter username"
+        name="Email"
+        placeholder="Enter Email"
         required
-        id="users"
+        id="email-login"
       />
       <p>Password</p>
       <input
         type="password"
         name="password"
         placeholder="Enter password"
-        requires
-        id="password"
+        required
+        id="password-login"
       />
     </form>
   </div>
-  <div id="log">
-    <a href="/home"><input
-        type="submit"
-        name="login"
-        value="Login"
-        id="login"
-      /></a>
-  </div>
-  <div id="signUp">
-    <p><a href="/sign-up" id="switch">Sign-up?</a></p>
-  </div>
+  <button id="log">Login</button>
+  
+  <p><a href="/sign-up" id="switch">Sign-up?</a></p>
+  
 </section>
 
 <script src="./js/login.js"></script>
