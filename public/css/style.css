@@ -227,6 +227,21 @@ h3 {
   height: 45px;
 }
 
+#submit {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 45px;
+  background-color: #a9a9a9;
+  color: #251a10;
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 7px;
+  height: 35px;
+  width: 150px;
+}
+
 #create {
   display: flex;
   justify-content: center;
@@ -244,11 +259,13 @@ h3 {
 
 #createdBtns {
   position: relative;
-  top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  top: 15px;
+  border-radius: 8px;
+  background-color: #a9a9a9;
+  margin: 15px auto;
+  height: 75px;
+  width: 40vw;
+  text-align: center;
 }
 
 /* .btnLinks{
@@ -286,10 +303,9 @@ footer div {
   background-color: #251a10;
 }
 
-#createDiv {
+#inputDiv {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* Media Queries *********************************************************/

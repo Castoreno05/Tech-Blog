@@ -2,51 +2,46 @@
 var newPost = document.getElementById("newPost");
 // Grab Create button
 var create = document.getElementById("create");
+// Grab Submit button
+var submit = document.getElementById("submit");
 // Create a body variable
 var body = document.body.children[1];
 // console.log(body);
 
-// Need to click the links to call content
-var btns = document.getElementsByClassName('postBtn');
-// var btnsArr = Array.from(btns);
-console.log(btns);
+// function createdPost() {
+//   // Create a variable for the url to live
+//   var post = `/api/posts`;
+//   // Make a fetch request to obtain createdPosts
+//   fetch(post)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       for (var i = 0; i < data.length; i++) {
+//         var titles = data[i].title;
+//         var creation = data[i].createdAt;
+//         var newCreation = creation.slice(0, creation.length - 14);
+//         // console.log(titles, newCreation);
 
-createdPost();
-function createdPost() {
-  // Create a variable for the url to live
-  var post = `/api/posts`;
-  // Make a fetch request to obtain createdPosts
-  fetch(post)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      for (var i = 0; i < data.length; i++) {
-        var titles = data[i].title;
-        var creation = data[i].createdAt;
-        var newCreation = creation.slice(0, creation.length - 14);
-        // console.log(titles, newCreation);
+//         // Create element to populate the body
+//         var dashboardPost = document.createElement("p");
+//         // Create link around the element
+//         var anchorTag = document.createElement("a");
 
-        // Create element to populate the body
-        var dashboardPost = document.createElement("p");
-        // Create link around the element
-        var anchorTag = document.createElement("a");
+//         dashboardPost.textContent = titles;
+//         // Set attributes to the appended elements
+//         dashboardPost.setAttribute("class", "postBtn");
+//         anchorTag.setAttribute("class", "btnLinks");
 
-        dashboardPost.textContent = titles;
-        // Set attributes to the appended elements
-        dashboardPost.setAttribute("class", "postBtn");
-        anchorTag.setAttribute("class", "btnLinks");
+//         // Append a button to the body
+//         body.appendChild(anchorTag).appendChild(dashboardPost);
+//       }
+//     });
+// }
 
-        // Append a button to the body
-        body.appendChild(anchorTag).appendChild(dashboardPost);
-      }
-    });
-}
-
-// Remove child (section) when create has been clicked
-// Post results from title and content inputs
-// Reset input values
-create.addEventListener("click", (event) => {
+// Remove child (section) when submit has been clicked
+// Append post to the dashboard
+submit.addEventListener("click", (event) => {
   event.preventDefault();
   var sectionThree = document.getElementById("section-three");
   var newTitle = document.getElementById("title");
@@ -80,6 +75,32 @@ create.addEventListener("click", (event) => {
 
     location.reload();
   });
+});
+
+// Remove child (section) when create has been clicked
+// Post results from title and content inputs
+// Reset input values
+create.addEventListener("click", (event) => {
+  var sectionThree = document.getElementById("section-three");
+  var newTitle = document.getElementById("title");
+  var newContent = document.getElementById("content");
+
+  // Place values into variables to use on the post
+  var title = newTitle.value;
+  var content = newContent.value;
+  var newPost = { title, content };
+  // console.log(newPost);
+
+  // Remove the display
+  sectionThree.setAttribute("style", "display:none;");
+
+  // Remove the text values
+  if (newTitle.value && newContent.value != "");
+  newTitle.value = "";
+  newContent.value = "";
+  // Remove the display
+  sectionThree.setAttribute("style", "display:none;");
+
 });
 
 // When a new post is selected. Show newPost form.

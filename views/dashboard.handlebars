@@ -13,7 +13,12 @@
 </header>
 
 {{!-- div for the buttons to collect --}}
-<div id="createdBtns"></div>
+{{#each drafts as |drafts|}}
+<div id="createdBtns">
+  <p>{{drafts.title}}</p>
+  <p>{{drafts.content}}</p>
+</div>
+{{/each}}
 
 <section
   class="section-three container-xl"
@@ -30,8 +35,9 @@
       <input type="text" name="content" id="content"/>
     </form>
   </div>
-  <div id="createDiv">
-    <a><input type="submit" name="create" value="Create" id="create" /></a>
+  <div id="inputDiv">
+    <input type="submit" name="submit" value="Submit" id="submit" />
+    <input type="submit" name="create" value="Create" id="create" />
   </div>
 
 </section>
