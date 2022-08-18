@@ -11,3 +11,10 @@
   <h1>Tech Blog</h1>
 
 </header>
+{{!-- This will show all the existing posts and place them into the home page --}}
+{{#each posts as |posts|}}
+  <div class="submittedPost">
+    <h3>{{posts.title}}</h3>
+    <p>{{posts.content}}</p>
+  </div>
+{{/each}}

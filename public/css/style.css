@@ -35,7 +35,7 @@ a {
 /* Use imported font */
 h1 {
   position: relative;
-  left: 5.5%;
+  left: 4%;
   width: 200px;
   height: 45px;
   font-family: "Share Tech", sans-serif;
@@ -68,7 +68,7 @@ h1 {
   color: #c8f7c8;
 }
 
-/* Beginning to the login styles */
+/* Beginning to the login styles *********************************************************/
 /* Create the section where the login form lives */
 .section-one {
   display: flex;
@@ -137,7 +137,7 @@ form input {
   width: 25vw;
 }
 
-#switch{
+#switch {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,7 +147,7 @@ form input {
   font-weight: 400;
 }
 
-/* Beginning to sign-up styles*/
+/* Beginning to sign-up styles *********************************************************/
 /* Create the section where the sign up form lives */
 .section-two {
   display: flex;
@@ -180,7 +180,38 @@ form input {
   background-color: #a9a9a9;
 }
 
-/* Beginning to dashboard styles */
+/* Beginning to home styles *********************************************************/
+/* Create a section where the posts will populate to home page */
+
+.submittedPost {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 2rem;
+  margin: 2rem auto;
+  width: 50vw;
+  border: solid 5px #251a10;
+  height: 15vh;
+  width: 75vw;
+}
+
+.submittedPost p {
+  display: flex;
+  padding: 10px;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  font-family: "Share Tech", sans-serif;
+  font-size: 20px;
+  background-color: #251a10;
+  color: whitesmoke;
+  height: 30px;
+  width: 100%;
+}
+
+/* Beginning to dashboard styles *********************************************************/
 .section-three {
   display: flex;
   flex-direction: column;
@@ -259,4 +290,11 @@ footer div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Media Queries *********************************************************/
+@media only screen and (max-width: 875px) {
+  .submittedPost {
+    overflow-y: scroll;
+  }
 }
