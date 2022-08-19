@@ -212,6 +212,14 @@ h3 {
 }
 
 /* Beginning to dashboard styles *********************************************************/
+
+.draftTitle {
+  margin: 24px;
+  font-family: "Share Tech", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+}
+
 .section-three {
   display: flex;
   flex-direction: column;
@@ -257,15 +265,24 @@ h3 {
   width: 150px;
 }
 
-#createdBtns {
+.draftCard {
+  display: flex;
   position: relative;
   top: 15px;
   border-radius: 8px;
   background-color: #a9a9a9;
   margin: 15px auto;
   height: 75px;
-  width: 40vw;
+  width: 70vw;
   text-align: center;
+}
+
+#draftContents {
+  display: flex;
+  margin: 20px auto;
+  height: 200px;
+  width: 70%;
+  border: 2px solid;
 }
 
 /* .btnLinks{

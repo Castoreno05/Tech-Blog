@@ -6,7 +6,22 @@ var create = document.getElementById("create");
 var submit = document.getElementById("submit");
 // Create a body variable
 var body = document.body.children[1];
-// console.log(body);
+
+// When the element is clicked remove the style of the title card
+// Then show all the contents/title within 
+window.onclick = e => {
+  // console.log(e.target); 
+  if (e.target === object) {
+    var selectedDiv = e.target;
+    console.log(typeof selectedDiv);
+    selectedDiv.setAttribute("style", "display:none;");
+    var draftContents = document.getElementById("draftContents");
+    var removeStyle = draftContents.outerHTML;
+  }else{
+    console.log('not working');
+  }
+}
+
 
 // function createdPost() {
 //   // Create a variable for the url to live
@@ -72,8 +87,6 @@ submit.addEventListener("click", (event) => {
     newContent.value = "";
     // Remove the display
     sectionThree.setAttribute("style", "display:none;");
-
-    location.reload();
   });
 });
 
@@ -81,6 +94,7 @@ submit.addEventListener("click", (event) => {
 // Post results from title and content inputs
 // Reset input values
 create.addEventListener("click", (event) => {
+  event.preventDefault();
   var sectionThree = document.getElementById("section-three");
   var newTitle = document.getElementById("title");
   var newContent = document.getElementById("content");
@@ -89,18 +103,30 @@ create.addEventListener("click", (event) => {
   var title = newTitle.value;
   var content = newContent.value;
   var newPost = { title, content };
-  // console.log(newPost);
+  console.log(newPost);
 
-  // Remove the display
-  sectionThree.setAttribute("style", "display:none;");
+  // Create a variable for post url
+  var drafts = `/api/drafts`;
+  // Create POST request to the Posts model
+  var options = {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(newPost),
+  };
+  fetch(drafts, options).then((response) => {
+    // console.log(newPost);
 
-  // Remove the text values
-  if (newTitle.value && newContent.value != "");
-  newTitle.value = "";
-  newContent.value = "";
-  // Remove the display
-  sectionThree.setAttribute("style", "display:none;");
+    // Remove the text values
+    if (newTitle.value && newContent.value != "");
+    newTitle.value = "";
+    newContent.value = "";
+    // Remove the display
+    sectionThree.setAttribute("style", "display:none;");
 
+  });
+  location.reload();
 });
 
 // When a new post is selected. Show newPost form.
