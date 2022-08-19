@@ -12,35 +12,42 @@
 
 </header>
 
-{{!-- div for the buttons to collect --}}
+{{! div for the buttons to collect }}
 {{#each drafts as |drafts|}}
-<div class="draftCard">
-  <div class="draftTitle">
-    <p>{{drafts.title}}</p>
+  <div class="draftCard" data-draftCardId="{{drafts.id}}">
+    <div class="draftTitle">
+      <p>{{drafts.title}}</p>
+    </div>
   </div>
-</div>
+  
+  {{!-- Section for the drafts style="display:none;"--}}
+  <section class="section-four container-xl" data-draftId="{{drafts.id}}" style="display:none;">
+
+    <h2>Edit Post</h2>
+    <div class="loginModal">
+      <form method="POST">
+        <p>{{drafts.title}}</p>
+        <input type="text" name="title" id="title" />
+        <p>Content</p>
+        <input type="text" name="content" id="content" />
+      </form>
+    </div>
+    <div id="inputDiv">
+      <input type="submit" name="submit" value="Submit" id="submit" />
+    </div>
+
+  </section>
+
 {{/each}}
 
-{{!-- style="display:none;" --}}
-{{!-- <section class="section-three container-xl" style="display:none;" >
+{{! style="display:none;" }}
+{{!-- {{#each drafts as |drafts|}}{{/each}} --}}
 
-  <h2>Edit Post</h2>
-  <div class="loginModal">
-    <form method="POST">
-      <p>Title</p>
-      <input type="text" name="title" id="title" />
-      <p>Content</p>
-      <input type="text" name="content" id="content" />
-    </form>
-  </div>
-  <div id="inputDiv">
-    <input type="submit" name="submit" value="Submit" />
-  </div>
-
-</section> --}}
-
-
-<section class="section-three container-xl" style="display:none;" id="section-three">
+<section
+  class="section-three container-xl"
+  style="display:none;"
+  id="section-three"
+>
 
   <h2>Create New Post</h2>
   <div class="loginModal">

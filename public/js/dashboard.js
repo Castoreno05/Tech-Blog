@@ -110,7 +110,6 @@ create.addEventListener("click", (event) => {
     newContent.value = "";
     // Remove the display
     sectionThree.setAttribute("style", "display:none;");
-
   });
   location.reload();
 });
@@ -120,4 +119,12 @@ newPost.addEventListener("click", () => {
   var sectionThree = document.getElementById("section-three");
   // Remove the display for section-three
   sectionThree.setAttribute("style", "");
+});
+
+// Place an onclick on draftCards
+addEventListener("DOMContentLoaded", () => {
+  $(".draftCard").on("click", function () {
+    var draftCard = $(".section-four");
+    console.log(draftCard);
+  });
 });
