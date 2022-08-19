@@ -19,11 +19,26 @@
     <p>{{drafts.title}}</p>
   </div>
 </div>
+{{/each}}
 
 {{!-- style="display:none;" --}}
-<div id="draftContents" style="display:none;"></div>
+{{!-- <section class="section-three container-xl" style="display:none;" >
 
-{{/each}}
+  <h2>Edit Post</h2>
+  <div class="loginModal">
+    <form method="POST">
+      <p>Title</p>
+      <input type="text" name="title" id="title" />
+      <p>Content</p>
+      <input type="text" name="content" id="content" />
+    </form>
+  </div>
+  <div id="inputDiv">
+    <input type="submit" name="submit" value="Submit" />
+  </div>
+
+</section> --}}
+
 
 <section class="section-three container-xl" style="display:none;" id="section-three">
 
@@ -33,7 +48,7 @@
       <p>Title</p>
       <input type="text" name="title" id="title" />
       <p>Content</p>
-      <input type="text" name="content" id="content" />
+      <textarea type="text" name="content" id="content"></textarea>
     </form>
   </div>
   <div id="inputDiv">

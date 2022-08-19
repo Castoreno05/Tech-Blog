@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const Drafts = require("../models/Drafts");
-const Posts = require("../models/Posts");
-
+const { Posts, Comments } = require("../models");
 
 // -----------------------------------------------------------------------------------------
 // Render login.handlebars
@@ -9,13 +8,11 @@ router.get("/", (req, res) => {
   res.render("login");
 });
 
-
 // -----------------------------------------------------------------------------------------
 // Render sign-up.handlebars
 router.get("/sign-up", (req, res) => {
   res.render("sign-up");
 });
-
 
 // -----------------------------------------------------------------------------------------
 // Render home.handlebars
@@ -25,7 +22,15 @@ router.get("/home", async (req, res) => {
   const posts = allPostData.map((p) => {
     return p.get({ plain: true });
   });
-  res.render("home", { posts: posts });
+
+  const allCommentData = await Comments.findAll();
+  const comments = allCommentData.map((c) => {
+    return c.get({ plain: true });
+  });
+  const commentsArr = [comments]; // loop and exract post.comments
+  console.log(commentsArr);
+
+  res.render("home", { posts: posts, comments: comments });
 });
 
 // router.get('/home', (req, res) => {

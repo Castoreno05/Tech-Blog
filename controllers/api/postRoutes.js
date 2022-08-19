@@ -1,13 +1,13 @@
 const router = require("express").Router();
 // Bring in Posts models
-const Posts = require("../../models/Posts");
+const { Posts } = require("../../models");
 
 // POST route to create the new posts from dashboard
 router.post("/", (req, res) => {
   Posts.create({
     title: req.body.title,
     content: req.body.content,
-    user_id: req.session.user_id
+    user_id: req.session.user_id,
   })
     .then((data) => {
       res.json(data);

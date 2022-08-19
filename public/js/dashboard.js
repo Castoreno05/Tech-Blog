@@ -7,22 +7,6 @@ var submit = document.getElementById("submit");
 // Create a body variable
 var body = document.body.children[1];
 
-// When the element is clicked remove the style of the title card
-// Then show all the contents/title within 
-window.onclick = e => {
-  // console.log(e.target); 
-  if (e.target === object) {
-    var selectedDiv = e.target;
-    console.log(typeof selectedDiv);
-    selectedDiv.setAttribute("style", "display:none;");
-    var draftContents = document.getElementById("draftContents");
-    var removeStyle = draftContents.outerHTML;
-  }else{
-    console.log('not working');
-  }
-}
-
-
 // function createdPost() {
 //   // Create a variable for the url to live
 //   var post = `/api/posts`;
@@ -88,6 +72,8 @@ submit.addEventListener("click", (event) => {
     // Remove the display
     sectionThree.setAttribute("style", "display:none;");
   });
+
+  location.reload();
 });
 
 // Remove child (section) when create has been clicked

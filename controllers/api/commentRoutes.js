@@ -1,11 +1,10 @@
+const { Comments } = require("../../models");
 const router = require("express").Router();
-// Require Drafts model
-const Drafts = require("../../models/Drafts");
 
-// POST route to create the new draft from dashboard
+// POST route to create the new comments from home page
 router.post("/", (req, res) => {
-  Drafts.create({
-    title: req.body.title,
+  Comments.create({
+    post_id: req.body.post_id,
     content: req.body.content,
     user_id: req.session.user_id,
   })
@@ -17,9 +16,9 @@ router.post("/", (req, res) => {
     });
 });
 
-// Get route to return all the draft data
+// Get route to return all comment data
 router.get("/", (req, res) => {
-  Drafts.findAll().then((data) => {
+  Comments.findAll().then((data) => {
     res.json(data);
   });
 });

@@ -181,7 +181,41 @@ form input {
 }
 
 /* Beginning to home styles *********************************************************/
-/* Create a section where the posts will populate to home page */
+/* Create a section where the comments will populate on home page */
+
+.comment-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  overflow-y: scroll;
+  margin-right: 2px;
+}
+
+.comment-section::-webkit-scrollbar{
+  display: none;
+}
+
+.comment {
+  background-color: #a9a9a9;
+  position: relative;
+  top: 75%;
+  color: #251a10;
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 7px;
+  height: 35px;
+  width: 150px;
+}
+
+.comment-input{
+  display: flex;
+  justify-content: center;
+  height: 15vh;
+  width: 15vw;
+  margin-right: 5px;
+  background-color: transparent;
+}
 
 .submittedPost {
   display: flex;
@@ -191,7 +225,7 @@ form input {
   margin: 2rem auto;
   width: 50vw;
   border: solid 5px #251a10;
-  height: 15vh;
+  height: 30vh;
   width: 75vw;
 }
 
@@ -232,7 +266,8 @@ h3 {
 }
 
 #content {
-  height: 45px;
+  height: 85px;
+  width: 100%;
 }
 
 #submit {

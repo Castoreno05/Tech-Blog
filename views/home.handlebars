@@ -11,10 +11,20 @@
   <h1>Tech Blog</h1>
 
 </header>
-{{!-- This will show all the existing posts and place them into the home page --}}
+{{! This will show all the existing posts and place them into the home page }}
 {{#each posts as |posts|}}
   <div class="submittedPost">
     <h3>{{posts.title}}</h3>
     <p>{{posts.content}}</p>
+    <div  class="comment-section">
+      <textarea type="text" max-length="10000" class="comment-input" data-postId="{{posts.id}}"></textarea>
+      <button class="comment">Comment</button>
+    </div>
   </div>
 {{/each}}
+
+{{#each comments as |comments|}}
+  <p>{{comments.content}}</p>
+{{/each}}
+
+<script src="./js/home.js"></script>
