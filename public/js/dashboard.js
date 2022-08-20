@@ -7,37 +7,6 @@ var submit = document.getElementById("submit");
 // Create a body variable
 var body = document.body.children[1];
 
-// function createdPost() {
-//   // Create a variable for the url to live
-//   var post = `/api/posts`;
-//   // Make a fetch request to obtain createdPosts
-//   fetch(post)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       for (var i = 0; i < data.length; i++) {
-//         var titles = data[i].title;
-//         var creation = data[i].createdAt;
-//         var newCreation = creation.slice(0, creation.length - 14);
-//         // console.log(titles, newCreation);
-
-//         // Create element to populate the body
-//         var dashboardPost = document.createElement("p");
-//         // Create link around the element
-//         var anchorTag = document.createElement("a");
-
-//         dashboardPost.textContent = titles;
-//         // Set attributes to the appended elements
-//         dashboardPost.setAttribute("class", "postBtn");
-//         anchorTag.setAttribute("class", "btnLinks");
-
-//         // Append a button to the body
-//         body.appendChild(anchorTag).appendChild(dashboardPost);
-//       }
-//     });
-// }
-
 // Remove child (section) when submit has been clicked
 // Append post to the dashboard
 submit.addEventListener("click", (event) => {
@@ -129,7 +98,7 @@ addEventListener("DOMContentLoaded", () => {
     $(this).hide();
 
     var data = $(this).data("draftcardid")
-    var dataSet = $( "#" + data )
+    var dataSet = $("#" + data)
     // console.log(data);
     editContainer = $(".editContainer").children("section");
     // var dataSet = editContainer.find("#" + data);
@@ -139,12 +108,38 @@ addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Remove parent element
+// Update post content
+// addEventListener("DOMContentLoaded", () => {
+//   $(".updateDraft").on("click", function () {
+//     var id = $(this).parent("div").parent("section").attr("id")
+//     console.log(id);
+//     fetch(`/api/drafts/${id}`, {
+//       method: 'UPDATE'
+//     }).then(response => {
+//       return response.json()
+//     }).then(data =>
+//       // this is the data we get after putting our data,
+//       console.log(data)
+//     );
+//   });
+// });
+
+// Delete draft from edit post
 addEventListener("DOMContentLoaded", () => {
-  $(".updateDraft").on("click", function () {
+  $(".deleteDraft").on("click", function () {
     // console.log("clicked");
-    var section = $(this).parent("div").parent().hide();
-    console.log(section);
+
+    var id = $(this).parent("div").parent("section").attr("id")
+    console.log(id);
+    // Delete request using draft id
+    fetch(`/api/drafts/${id}`, {
+      method: 'DELETE'
+    }).then(response => {
+      return response.json()
+    }).then(data =>
+      // this is the data we get after putting our data,
+      console.log(data)
+    );
     location.reload();
   });
 });

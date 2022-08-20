@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const req = require("express/lib/request");
 // Require Drafts model
 const Drafts = require("../../models/Drafts");
 
@@ -21,7 +22,58 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
   Drafts.findAll().then((data) => {
     res.json(data);
+  })
+    .catch((err) => {
+      res.sendStatus(500).send("Not connected").json(err)
+    })
+});
+
+// Get route to return One draft per id 
+router.get("/:id", (req, res) => {
+  Drafts.findOne(
+    {
+      where: {
+        id: req.params.id
+      },
+    }
+  ).then((draftData) => {
+    res.json(draftData);
   });
+});
+
+// Delete route for draft data
+router.delete('/:id', (req, res) => {
+  // delete draft based on its id selected
+  Drafts.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deletedDraft) => {
+      res.json(deletedDraft)
+    })
+    .catch((err) => res.json(err))
+});
+
+// Update route for draft data
+router.put('/:id', (req, res) => {
+  Drafts.update(
+    {
+      // All data attached to the request body.
+      content: req.body.content,
+    },
+    {
+      // Gets the draft based on the id given in the request parameters
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((updatedDraft) => {
+      // Sends updated draft as a json response
+      res.json(updatedDraft);
+    })
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;
