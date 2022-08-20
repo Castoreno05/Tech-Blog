@@ -43,8 +43,8 @@ var body = document.body.children[1];
 submit.addEventListener("click", (event) => {
   event.preventDefault();
   var sectionThree = document.getElementById("section-three");
-  var newTitle = document.getElementById("title");
-  var newContent = document.getElementById("content");
+  var newTitle = document.querySelector(".title");
+  var newContent = document.querySelector(".content");
 
   // Place values into variables to use on the post
   var title = newTitle.value;
@@ -74,6 +74,7 @@ submit.addEventListener("click", (event) => {
   });
 
   location.reload();
+  console.log('clicked');
 });
 
 // Remove child (section) when create has been clicked
@@ -82,8 +83,8 @@ submit.addEventListener("click", (event) => {
 create.addEventListener("click", (event) => {
   event.preventDefault();
   var sectionThree = document.getElementById("section-three");
-  var newTitle = document.getElementById("title");
-  var newContent = document.getElementById("content");
+  var newTitle = document.querySelector(".title");
+  var newContent = document.querySelector(".content");
 
   // Place values into variables to use on the post
   var title = newTitle.value;
@@ -122,9 +123,28 @@ newPost.addEventListener("click", () => {
 });
 
 // Place an onclick on draftCards
+// Show each draftcards section
 addEventListener("DOMContentLoaded", () => {
   $(".draftCard").on("click", function () {
-    var draftCard = $(".section-four");
-    console.log(draftCard);
+    $(this).hide();
+
+    var data = $(this).data("draftcardid")
+    var dataSet = $( "#" + data )
+    // console.log(data);
+    editContainer = $(".editContainer").children("section");
+    // var dataSet = editContainer.find("#" + data);
+
+    dataSet.attr("style", "")
+    console.log(dataSet);
+  });
+});
+
+// Remove parent element
+addEventListener("DOMContentLoaded", () => {
+  $(".updateDraft").on("click", function () {
+    // console.log("clicked");
+    var section = $(this).parent("div").parent().hide();
+    console.log(section);
+    location.reload();
   });
 });

@@ -19,26 +19,57 @@
       <p>{{drafts.title}}</p>
     </div>
   </div>
-  
-  {{!-- Section for the drafts style="display:none;"--}}
-  <section class="section-four container-xl" data-draftId="{{drafts.id}}" style="display:none;">
+  <div class="editContainer">
 
-    <h2>Edit Post</h2>
-    <div class="loginModal">
-      <form method="POST">
-        <p>{{drafts.title}}</p>
-        <input type="text" name="title" id="title" />
-        <p>Content</p>
-        <input type="text" name="content" id="content" />
-      </form>
-    </div>
-    <div id="inputDiv">
-      <input type="submit" name="submit" value="Submit" id="submit" />
-    </div>
+    <section
+      class="section-four container-xl"
+      id="{{drafts.id}}"
+      style="display:none;"
+    >
 
-  </section>
+      <h2>Edit Post</h2>
+      <div class="loginModal">
+        <form method="POST">
+          <p>{{drafts.title}}</p>
+          <input type="text" name="title" id="title" />
+          <p>Content</p>
+          <textarea type="text" name="content" id="content"></textarea>
+        </form>
+      </div>
+      <div id="inputDiv">
+        <input type="submit" name="submit" value="Submit" class="submitDraft"/>
+        <input type="submit" name="update" value="Update" class="updateDraft"/>
+      </div>
 
+    </section>
+
+  </div>
 {{/each}}
+
+{{!-- <div class="editContainer">
+  {{#each drafts as |drafts|}}
+    <section
+      class="section-four container-xl"
+      id="{{drafts.id}}"
+      style="display:none;"
+    >
+
+      <h2>Edit Post</h2>
+      <div class="loginModal">
+        <form method="POST">
+          <p>{{drafts.title}}</p>
+          <input type="text" name="title" id="title" />
+          <p>Content</p>
+          <input type="text" name="content" id="content" />
+        </form>
+      </div>
+      <div id="inputDiv">
+        <input type="submit" name="submit" value="Submit" />
+      </div>
+
+    </section>
+  {{/each}}
+</div> --}}
 
 {{! style="display:none;" }}
 {{!-- {{#each drafts as |drafts|}}{{/each}} --}}
@@ -53,9 +84,9 @@
   <div class="loginModal">
     <form method="POST">
       <p>Title</p>
-      <input type="text" name="title" id="title" />
+      <input type="text" name="title" class="title" />
       <p>Content</p>
-      <textarea type="text" name="content" id="content"></textarea>
+      <textarea type="text" name="content" class="content"></textarea>
     </form>
   </div>
   <div id="inputDiv">
