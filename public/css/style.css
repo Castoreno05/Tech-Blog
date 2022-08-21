@@ -275,12 +275,12 @@ h3 {
   border: solid 5px #251a10;
 }
 
-#content {
-  height: 85px;
+textarea {
+  height: 95px;
   width: 100%;
 }
 
-#submit {
+.submit {
   display: flex;
   justify-content: center;
   position: relative;
@@ -295,7 +295,21 @@ h3 {
   width: 150px;
 }
 
-#create {
+.submitEdit {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 45px;
+  background-color: #a9a9a9;
+  color: #251a10;
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 7px;
+  height: 35px;
+  width: 150px;
+}
+.create {
   display: flex;
   justify-content: center;
   position: relative;

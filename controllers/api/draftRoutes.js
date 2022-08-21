@@ -60,6 +60,7 @@ router.put('/:id', (req, res) => {
   Drafts.update(
     {
       // All data attached to the request body.
+      title: req.body.title,
       content: req.body.content,
     },
     {

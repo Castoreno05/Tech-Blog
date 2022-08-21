@@ -26,12 +26,15 @@
     <h2>Edit Post</h2>
     <div class="loginModal">
       <form method="POST">
-        <p>{{drafts.title}} content</p>
-        <textarea type="text" name="content" id="content">{{drafts.content}}</textarea>
+        <br>
+        <input value="{{drafts.title}}"/>
+        <br>
+        <br>
+        <textarea type="text" name="content">{{drafts.content}}</textarea>
       </form>
     </div>
     <div id="inputDiv">
-      <input type="submit" name="submit" value="Submit" class="submitDraft" />
+      <input type="submit" name="submit" value="Submit" class="submitEdit" />
       <input type="submit" name="update" value="Update" class="updateDraft" />
       <input type="submit" name="delete" value="Delete" class="deleteDraft" />
     </div>
@@ -41,30 +44,6 @@
 </div>
 {{/each}}
 
-{{!-- <div class="editContainer">
-  {{#each drafts as |drafts|}}
-  <section class="section-four container-xl" id="{{drafts.id}}" style="display:none;">
-
-    <h2>Edit Post</h2>
-    <div class="loginModal">
-      <form method="POST">
-        <p>{{drafts.title}}</p>
-        <input type="text" name="title" id="title" />
-        <p>Content</p>
-        <input type="text" name="content" id="content" />
-      </form>
-    </div>
-    <div id="inputDiv">
-      <input type="submit" name="submit" value="Submit" />
-    </div>
-
-  </section>
-  {{/each}}
-</div> --}}
-
-{{! style="display:none;" }}
-{{!-- {{#each drafts as |drafts|}}{{/each}} --}}
-
 <section class="section-three container-xl" style="display:none;" id="section-three">
 
   <h2>Create New Post</h2>
@@ -73,12 +52,12 @@
       <p>Title</p>
       <input type="text" name="title" class="title" />
       <p>Content</p>
-      <textarea type="text" name="content" class="content"></textarea>
+      <textarea type="text" name="content"></textarea>
     </form>
   </div>
   <div id="inputDiv">
-    <input type="submit" name="submit" value="Submit" id="submit" />
-    <input type="submit" name="create" value="Create" id="create" />
+    <input type="submit" name="submit" value="Submit" class="submit" />
+    <input type="submit" name="create" value="Create" class="create" />
   </div>
 
 </section>
