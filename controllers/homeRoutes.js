@@ -36,8 +36,11 @@ router.get("/home", async (req, res) => {
 router.get('/home/:id', async (req, res) => {
   try{
     const postData = await Posts.findByPk(req.params.id);
+    // const commentData = await Comments.findByPk(req.params.post_id);
+    // const comments = commentData.get({ plain: true });
     const posts = postData.get({ plain: true });
     res.render('singlepost', { posts });
+    // console.log(comments)
   }catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -55,6 +58,7 @@ router.get("/dashboard", async (req, res) => {
   const drafts = allDraftData.map((d) => {
     return d.get({ plain: true });
   });
+  // console.log({drafts})
   res.render("dashboard", { drafts: drafts });
 });
 

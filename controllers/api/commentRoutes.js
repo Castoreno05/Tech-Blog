@@ -23,4 +23,17 @@ router.get("/", (req, res) => {
   });
 });
 
+// Get route to return comments that have the same post_id
+router.get("/:id", (req, res) => {
+  Comments.findOne(
+    {
+      where: {
+        post_id: req.params.id,
+      },
+    }
+  ).then((commentData) => {
+    res.json(commentData);
+  });
+});
+
 module.exports = router;

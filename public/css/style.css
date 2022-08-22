@@ -257,6 +257,36 @@ h3 {
   color: #251a10;
 }
 
+.commentDiv {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 2rem;
+  margin: 2rem auto;
+  border: solid 5px #251a10;
+  height: 30vh;
+  width: 75vw;
+}
+
+.commentDiv textarea {
+  width: 75%;
+  margin: auto;
+  height: 55%;
+}
+
+.commentBtn {
+  display: flex;
+  justify-content: center;
+  background-color: #a9a9a9;
+  color: #251a10;
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 7px;
+  height: 35px;
+  width: 150px;
+}
+
 /* Beginning to dashboard styles *********************************************************/
 
 .draftTitle {
