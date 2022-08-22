@@ -1,0 +1,21 @@
+<header>
+
+  <nav>
+    <ul class="links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/">Logout</a></li>
+    </ul>
+  </nav>
+
+  <h1>Tech Blog</h1>
+</header>
+
+<div class="postComment">
+  <h3>{{posts.title}}</h3>
+  <p>{{posts.content}}</p>
+  <p>{{posts.user_id.name}}</p>
+  <p class="createdAt">{{posts.createdAt}}</p>
+</div>
+
+<script src="./js/singlepost.js"></script>

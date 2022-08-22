@@ -33,6 +33,17 @@ router.get("/home", async (req, res) => {
   res.render("home", { posts: posts, comments: comments });
 });
 
+router.get('/home/:id', async (req, res) => {
+  try{
+    const postData = await Posts.findByPk(req.params.id);
+    const posts = postData.get({ plain: true });
+    res.render('singlepost', { posts });
+  }catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 // router.get('/home', (req, res) => {
 //     res.render("home");
 // });

@@ -16,15 +16,12 @@
   <div class="submittedPost">
     <h3>{{posts.title}}</h3>
     <p>{{posts.content}}</p>
-    <div  class="comment-section">
-      <textarea type="text" max-length="10000" class="comment-input" data-postId="{{posts.id}}"></textarea>
-      <button class="comment">Comment</button>
-    </div>
+    <a href="/home/{{posts.id}}" class="comment">Comment</a>
   </div>
 {{/each}}
 
-{{#each comments as |comments|}}
+{{!-- {{#each comments as |comments|}}
   <p>{{comments.content}}</p>
-{{/each}}
+{{/each}} --}}
 
 <script src="./js/home.js"></script>
