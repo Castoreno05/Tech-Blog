@@ -33,19 +33,25 @@ router.get("/home", async (req, res) => {
   res.render("home", { posts: posts, comments: comments });
 });
 
-router.get('/home/:id', async (req, res) => {
-  try{
+router.get("/home/:id", async (req, res) => {
+  try {
     const postData = await Posts.findByPk(req.params.id);
-    // const commentData = await Comments.findByPk(req.params.post_id);
-    // const comments = commentData.get({ plain: true });
     const posts = postData.get({ plain: true });
-    res.render('singlepost', { posts });
+    console.log(posts);
+    res.render("singlepost", { posts });
     // console.log(comments)
-  }catch (err) {
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
-})
+
+  const allCommentData = await Comments.findAll();
+  const comments = allCommentData.map((c) => {
+    return c.get({ plain: true });
+  });
+  // loop and exract post.comments
+  console.log(comments);
+});
 
 // router.get('/home', (req, res) => {
 //     res.render("home");
