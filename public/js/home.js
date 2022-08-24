@@ -21,8 +21,13 @@
 //   });
 // });
 
-addEventListener("DOMContentLoaded", () => {
-  $(".comment").on("click", () => {
-    console.log("clicked");
+function postDate() {
+  var removeText = document.querySelectorAll(".creation");
+  removeText.forEach(function (text) {
+    removeText = document.querySelector(".creation").textContent;
+    var newText = removeText.slice(0, 16);
+    text.textContent = newText;
   });
-});
+}
+
+postDate();

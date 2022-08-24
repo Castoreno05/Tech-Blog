@@ -23,6 +23,11 @@ router.get("/home", async (req, res) => {
       return p.get({ plain: true });
     });
 
+    const allUserData = await User.findAll();
+    const users = allUserData.map((u) => {
+      return u.get({ plain: true });
+    });
+
     const allCommentData = await Comments.findAll();
     const comments = allCommentData.map((c) => {
       return c.get({ plain: true });
@@ -30,7 +35,7 @@ router.get("/home", async (req, res) => {
     const commentsArr = [comments]; // loop and exract post.comments
     console.log(commentsArr);
 
-    res.render("home", { posts: posts, comments: comments });
+    res.render("home", { posts: posts, comments: comments, user: users });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
