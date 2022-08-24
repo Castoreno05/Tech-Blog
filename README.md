@@ -12,9 +12,9 @@ the post as a draft. When drafts are created, you given the option to select the
 
 submit to home page. From the home page you are given the option to leave comments to existing posts. Select the 
 
-button then leave a comment. When a comment has been made you will see a date and the user that created the comment 
+button then leave a comment. When a comment has been made you will see a date and the user that created the 
 
-as well as the user that created the post.
+comment as well as the user that created the post.
 
 ## Tools Used 
 
