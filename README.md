@@ -29,8 +29,8 @@ the comment as well as the user that created the post.
 
 Matthew Castoreno
 
-Email: <matthew.castoreno>
+Email: <matthew.castoreno@yahoo.com>
 
-Github Username: <Castoreno05>
+Github Username: [Castoreno05](Castoreno05)
 
 Linkedin: https://www.linkedin.com/in/matthew-castoreno-4973a923b/
