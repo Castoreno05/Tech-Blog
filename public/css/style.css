@@ -352,7 +352,7 @@ textarea {
   display: flex;
   justify-content: center;
   position: relative;
-  top: 45px;
+  top: 15px;
   background-color: #a9a9a9;
   color: #251a10;
   font-family: "Share Tech", sans-serif;
@@ -381,7 +381,7 @@ textarea {
   display: flex;
   justify-content: center;
   position: relative;
-  top: 45px;
+  top: 15px;
   background-color: #a9a9a9;
   color: #251a10;
   font-family: "Share Tech", sans-serif;

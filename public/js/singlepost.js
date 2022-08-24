@@ -15,9 +15,8 @@ addEventListener("DOMContentLoaded", () => {
     };
     fetch(comments, options).then((response) => {
       console.log("Success!");
+      location.reload();
     });
-    var commentStyle = $(".commentDiv").attr("style", "display:none;");
-    console.log(commentStyle);
   });
 });
 
