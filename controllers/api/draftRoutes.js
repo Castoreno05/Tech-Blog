@@ -38,7 +38,11 @@ router.get("/:id", (req, res) => {
     }
   ).then((draftData) => {
     res.json(draftData);
-  });
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json(err);
+  }) 
 });
 
 // Delete route for draft data

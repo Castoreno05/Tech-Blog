@@ -271,12 +271,14 @@ h3 {
 .commentDiv textarea {
   width: 75%;
   margin: auto;
-  height: 55%;
+  height: 60%;
+  border-color: #a9a9a9;
 }
 
 .commentBtn {
   display: flex;
   justify-content: center;
+  margin: auto;
   background-color: #a9a9a9;
   color: #251a10;
   font-family: "Share Tech", sans-serif;
@@ -285,6 +287,30 @@ h3 {
   border-radius: 7px;
   height: 35px;
   width: 150px;
+}
+
+.foot-container {
+  height: 100px;
+}
+
+.submittedComment {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 2rem;
+  margin: 2rem auto;
+  width: 50vw;
+  border: solid 5px #251a10;
+  height: 30vh;
+  width: 75vw;
+}
+
+.submittedComment p {
+  display: flex;
+  padding: 10px;
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+  color: #251a10;
 }
 
 /* Beginning to dashboard styles *********************************************************/
@@ -471,7 +497,6 @@ footer div {
   height: 35px;
   width: 150px;
 }
-
 
 /* Media Queries *********************************************************/
 @media only screen and (max-width: 875px) {

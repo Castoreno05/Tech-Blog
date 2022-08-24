@@ -13,13 +13,18 @@
 <div class="postComment">
   <h3>{{posts.title}}</h3>
   <p>{{posts.content}}</p>
-  <p class="userId">{{posts.user_id}}</p>
-  <p class="createdAt">{{posts.createdAt}}</p>
+  <p class="userId">-{{posts.user.name}}</p>
+  <p class="createdAt" style="display: none;">{{posts.createdAt}}</p>
 </div>
 
-{{!-- {{#each comments as |comments|}}
-  <p>{{comments.content}}</p>
-{{/each}} --}}
+{{#each posts.Comments as |comment|}}
+  <div class="submittedComment">
+    <h3>Comment</h3>
+    <p>{{comment.content}}</p>
+    <p>-{{comment.user.name}}</p>
+    <p class="commentDate">{{comment.createdAt}}</p>
+  </div>
+{{/each}}
 
 <div class="commentDiv" data-id="{{posts.id}}">
   <h3>Comment</h3>
@@ -27,4 +32,7 @@
   <button class="commentBtn">Submit</button>
 </div>
 
+<footer>
+  <div class="foot-container"></div>
+</footer>
 <script src="/js/singlepost.js"></script>

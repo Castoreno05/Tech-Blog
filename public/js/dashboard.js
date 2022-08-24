@@ -105,19 +105,14 @@ addEventListener("DOMContentLoaded", () => {
       },
       body: JSON.stringify(newPost),
     };
-    fetch(drafts, options).then((response) => {
-      // console.log(newPost);
-      // // Remove the text values
-      // if (newTitle.value && content != "") {
-      //   newTitle.value = "";
-      //   content = "";
-      //   // Remove the display
-      //   sectionThree.setAttribute("style", "display:none;");
-      // }
-    });
-    location.reload();
+    fetch(drafts, options).then((response) => response.json());
+    reloadPage();
   });
 });
+
+function reloadPage() {
+  location.reload();
+}
 
 // When a new post is selected. Show newPost form.
 newPost.addEventListener("click", () => {

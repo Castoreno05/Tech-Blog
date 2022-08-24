@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Drafts = require("../models/Drafts");
-const { Posts, Comments } = require("../models");
+const { Posts, Comments, User } = require("../models");
 
 // -----------------------------------------------------------------------------------------
 // Render login.handlebars
@@ -18,25 +18,39 @@ router.get("/sign-up", (req, res) => {
 // Render home.handlebars
 // Get route to return all the post data then render home.handlebars
 router.get("/home", async (req, res) => {
-  const allPostData = await Posts.findAll();
-  const posts = allPostData.map((p) => {
-    return p.get({ plain: true });
-  });
+  try {
+    const allPostData = await Posts.findAll();
+    const posts = allPostData.map((p) => {
+      return p.get({ plain: true });
+    });
 
-  const allCommentData = await Comments.findAll();
-  const comments = allCommentData.map((c) => {
-    return c.get({ plain: true });
-  });
-  const commentsArr = [comments]; // loop and exract post.comments
-  console.log(commentsArr);
+    const allCommentData = await Comments.findAll();
+    const comments = allCommentData.map((c) => {
+      return c.get({ plain: true });
+    });
+    const commentsArr = [comments]; // loop and exract post.comments
+    console.log(commentsArr);
 
-  res.render("home", { posts: posts, comments: comments });
+    res.render("home", { posts: posts, comments: comments });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get("/home/:id", async (req, res) => {
   try {
-    const postData = await Posts.findByPk(req.params.id);
+    const postData = await Posts.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comments,
+          include: [User],
+        },
+        User,
+      ],
+    });
     const posts = postData.get({ plain: true });
+    // loop and exract post.comments
     console.log(posts);
     res.render("singlepost", { posts });
     // console.log(comments)
@@ -44,13 +58,6 @@ router.get("/home/:id", async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-
-  const allCommentData = await Comments.findAll();
-  const comments = allCommentData.map((c) => {
-    return c.get({ plain: true });
-  });
-  // loop and exract post.comments
-  console.log(comments);
 });
 
 // router.get('/home', (req, res) => {
@@ -60,12 +67,17 @@ router.get("/home/:id", async (req, res) => {
 // -----------------------------------------------------------------------------------------
 // Render dashboard
 router.get("/dashboard", async (req, res) => {
-  const allDraftData = await Drafts.findAll();
-  const drafts = allDraftData.map((d) => {
-    return d.get({ plain: true });
-  });
-  // console.log({drafts})
-  res.render("dashboard", { drafts: drafts });
+  try {
+    const allDraftData = await Drafts.findAll();
+    const drafts = allDraftData.map((d) => {
+      return d.get({ plain: true });
+    });
+    // console.log({drafts})
+    res.render("dashboard", { drafts: drafts });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

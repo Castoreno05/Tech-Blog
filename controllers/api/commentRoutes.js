@@ -20,7 +20,11 @@ router.post("/", (req, res) => {
 router.get("/", (req, res) => {
   Comments.findAll().then((data) => {
     res.json(data);
-  });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
 
 // Get route to return comments that have the same post_id
@@ -33,7 +37,11 @@ router.get("/:id", (req, res) => {
     }
   ).then((commentData) => {
     res.json(commentData);
-  });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
 
 module.exports = router;
