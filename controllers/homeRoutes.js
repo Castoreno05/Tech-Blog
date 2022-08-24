@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const Drafts = require("../models/Drafts");
-const { Posts, Comments, User } = require("../models");
+const { Posts, Comments, User, Drafts } = require("../models");
 
 // -----------------------------------------------------------------------------------------
 // Render login.handlebars

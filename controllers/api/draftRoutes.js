@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const req = require("express/lib/request");
 // Require Drafts model
-const Drafts = require("../../models/Drafts");
+const { Drafts } = require("../../models");
 
 // POST route to create the new draft from dashboard
 router.post("/", (req, res) => {
